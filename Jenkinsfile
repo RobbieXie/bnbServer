@@ -1,9 +1,14 @@
 pipeline {
-    agent { docker { image 'node:10.8-slim' } }
+    agent {
+        docker {
+            image 'node:6-alpine' 
+            args '-p 3000:3000' 
+        }
+    }
     stages {
-        stage('build') {
+        stage('Build') { 
             steps {
-                sh 'npm --version'
+                sh 'npm install' 
             }
         }
     }
