@@ -12,4 +12,11 @@ pipeline {
             }
         }
     }
+    stages {
+        stage('Deploy') { 
+            steps {
+                sh 'node app.js' 
+            }
+        }
+    }
 }
